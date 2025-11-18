@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Détection TikTok</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-container {
+            display: none;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="image-container" id="imageContainer">
+        <img src="taap.jpeg" alt="Image TikTok" id="image">
+    </div>
+
+    <script>
+        // Fonction pour vérifier si l'utilisateur est sur TikTok
+        function isTikTok() {
+            const userAgent = navigator.userAgent.toLowerCase();
+            return userAgent.includes("tiktok");
+        }
+
+        // Si TikTok est détecté, afficher l'image
+        if (isTikTok()) {
+            document.getElementById('imageContainer').style.display = 'flex';
+        } else {
+            // Sinon, rediriger vers un autre site après 2 secondes
+            setTimeout(() => {
+                window.location.href = "https://www.bonzai.pro/lucas-copywriting/shop/bx4R_5784/la-maitrise-du-copywriting?page=sales"; // Remplace par l'URL de redirection
+            }, 1000); // Attendre 2 secondes avant de rediriger
+        }
+    </script>
+
+</body>
+</html>
